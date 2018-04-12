@@ -222,13 +222,6 @@ number.
 <p class="note no-backref"><a>HTTP(S) scheme</a>, <a>network scheme</a>, and <a>fetch scheme</a> are
 also used by <cite>HTML</cite>. [[HTML]]
 
-<hr>
-
-<p id=fetch-url>A <dfn>response URL</dfn> is a <a for=/>URL</a> for which implementations need not
-store the <a for=url>fragment</a> as it is never exposed. When
-<a lt="url serializer">serialized</a>, the <i>exclude fragment flag</i> is set, meaning
-implementations can store the <a for=url>fragment</a> nonetheless.
-
 
 <h3 id=http>HTTP</h3>
 
@@ -1462,15 +1455,15 @@ end-user.
 
 <p>A <a for=/>response</a> has an associated
 <dfn export for=response id=concept-response-url>URL</dfn>. It is a pointer to the last
-<a>response URL</a> in <a for=/>response</a>'s <a for=response>URL list</a> and null if
-<a for=/>response</a>'s <a for=response>URL list</a> is the empty list.
+<a for=/>URL</a> in <a for=/>response</a>'s <a for=response>URL list</a> and null if
+<a for=/>response</a>'s <a for=response>URL list</a> <a for=list>is empty</a>.
 
 <p>A <a for=/>response</a> has an associated
 <dfn export for=response id=concept-response-url-list>URL list</dfn> (a <a for=/>list</a> of zero or
-more <a>response URLs</a>). Unless stated otherwise, it is the empty list.
+more <a for=/>URLs</a>). Unless stated otherwise, it is the empty list.
 
-<p class="note no-backref">Except for the last <a>response URL</a>, if any, a
-<a for=/>response</a>'s <a for=response>URL list</a> cannot be exposed to script. That would violate
+<p class="note no-backref">Except for the last <a for=/>URL</a>, if any, a <a for=/>response</a>'s
+<a for=response>URL list</a> is not exposed to script as that would violate
 <a>atomic HTTP redirect handling</a>.
 
 <p>A <a for=/>response</a> has an associated
@@ -6033,8 +6026,7 @@ return the <a>context object</a>'s <a for=Response>response</a>'s <a for=respons
 <p>The <dfn attribute for=Response><code>url</code></dfn> attribute's getter, when invoked, must
 return the empty string if the <a>context object</a>'s <a for=Response>response</a>'s
 <a for=response>URL</a> is null and the <a>context object</a>'s <a for=Response>response</a>'s
-<a for=response>URL</a>, <a lt="url serializer">serialized</a> with the <i>exclude-fragment flag</i>
-set, otherwise. [[!URL]]
+<a for=response>URL</a>, <a lt="url serializer">serialized</a>, otherwise. [[!URL]]
 
 <p>The <dfn attribute for=Response><code>redirected</code></dfn> attribute's getter, when invoked,
 must return true if the <a>context object</a>'s <a for=Response>response</a>'s
