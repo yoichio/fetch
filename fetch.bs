@@ -3395,6 +3395,13 @@ optional <i>CORS flag</i> and <i>CORS-preflight flag</i>, run these steps:
       </ul>
 
       <p>then return a <a>network error</a>.
+
+     <li>
+      <p>If <var>actualResponse</var>'s <a for=response>URL</a>'s <a for=url>fragment</a> is null,
+      then set <var>actualResponse</var>'s <a for=response>URL</a>'s <a for=url>fragment</a> to
+      <var>request</var>'s <a for=request>current URL</a>'s <a for=url>fragment</a>.
+
+      <p class=note>Without this step, the fragment would end up getting lost due to the Cache API.
     </ol>
   </ol>
 
@@ -3481,7 +3488,7 @@ optional <i>CORS flag</i> and <i>CORS-preflight flag</i>, run these steps:
     <a for=request>current URL</a>'s <a for=url>fragment</a>.
 
     <p class=note>This ensures that synthetic (indeed, all) responses follow the processing model
-    defined by HTTP. [[HTTP-SEMANTICS]]
+    for redirects defined by HTTP. [[HTTP-SEMANTICS]]
 
    <li><p>Set <var>actualResponse</var>'s
    <a for=response>location URL</a> to <var>location</var>.
