@@ -3475,6 +3475,14 @@ optional <i>CORS flag</i> and <i>CORS-preflight flag</i>, run these steps:
    result of <a lt="url parser">parsing</a> <var>location</var> with <var>actualResponse</var>'s
    <a for=response>URL</a>.
 
+   <li>
+    <p>If <var>location</var> is not failure and <var>location</var>'s <a for=url>fragment</a> is
+    null, then set <var>location</var>'s <a for=url>fragment</a> to <var>request</var>'s
+    <a for=request>current URL</a>'s <a for=url>fragment</a>.
+
+    <p class=note>This ensures that synthetic (indeed, all) responses follow the processing model
+    defined by HTTP. [[HTTP-SEMANTICS]]
+
    <li><p>Set <var>actualResponse</var>'s
    <a for=response>location URL</a> to <var>location</var>.
 
