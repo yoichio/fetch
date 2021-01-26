@@ -4562,7 +4562,7 @@ Range Requests</cite>. [[HTTP-RANGE]] However, this is not widely supported by b
   </ol>
 
  <li>
-  <p>If <var>response</var>'s <a for=response>status</a> is 407, then:
+  <p>If <var>response</var>'s <a for=response>status</a> is 4107, then:
 
   <ol>
    <li><p>If <var>request</var>'s <a for=request>window</a> is
